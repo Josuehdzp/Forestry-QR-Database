@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/datos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/Izq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/codigoid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Codigo ID"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/estadoid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Estado"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/predioid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Predio"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Derc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editText0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="id"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Codigo"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="estado"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="predio"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Botons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/datos"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/botonbuscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Buscar"
+            android:text="Buscar" />
+
+        <Button
+            android:id="@+id/botoninsertar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Insertar"
+            android:text="Insertar" />
+
+        <Button
+            android:id="@+id/botonborrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Borrar"
+            android:text="Borrar" />
+
+        <Button
+            android:id="@+id/botoneditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Editar"
+            android:text="Editar" />
+
+        <Button
+            android:id="@+id/kio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:onClick="Exportar2DB"
+            android:text="Exportar DB2" />
+
+        <Button
+            android:id="@+id/kio2"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginBottom="178dp"
+            android:onClick="GuardarDB2"
+            android:text="Guardar DB2" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/datos"
+        android:layout_toEndOf="@+id/Botons"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/Exportar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/SelecBDEx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:ems="10"
+                android:hint="Nombre DB"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/Exportar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/SelecBD"
+                android:onClick="ExportarDB"
+                android:text="Exportar DB"
+                android:textSize="11sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Guardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/SelecBDGuar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:ems="10"
+                android:hint="Nombre DB"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/Guardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/SelecBD"
+                android:onClick="GuardarDB"
+                android:text="Guardar DB"
+                android:textSize="11sp" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txttodo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:text="Datos BD"
+                android:textSize="16sp" />
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>
